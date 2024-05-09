@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Aashirwad</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+    // const say =  () => {
+    //     console.log('Tyagi');
+    // }
+    // setInterval(say, 2000)
+
+    const changeName = () => {
+        const data = document.querySelector('h1')
+    data.innerHTML = "Ishika"
+    }
+
+
+    const changeme = setTimeout(changeName, 2000)
+    
+    //stop timeout when stop button is pressed
+    const butt = document.querySelector('#stop')
+    butt.addEventListener('click', () => {
+        clearTimeout(changeme)
+        console.log("stopped");
+    })
+</script>
+</html>
